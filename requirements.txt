@@ -2,5 +2,5 @@ django
 gunicorn
 django-heroku
 django-crispy-forms
-django-bootstrap3
+django-bootstrap4
 django-bootstrap-datepicker-plus
