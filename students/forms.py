@@ -15,7 +15,7 @@ class TransactionForm(forms.ModelForm):
 
 	class Meta:
 		model = Transaction
-		fields = ('Name','Class_Date')
+		fields = ('Name', 'Class_Date')
 		widgets = {
             'Class_Date': DatePickerInput(),
         }
