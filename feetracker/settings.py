@@ -91,15 +91,6 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
     }
 }
-""" DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'], #'dehicq1t1nmk4r',
-        'USER': os.environ['DB_USER'], #'mgxssejeyvvaaf',
-        'PASSWORD': os.environ['DB_PASSWORD'], #'654eaa4a731b9c8c9a136113f834f86953903cc0e321acc18866e5fb1a699a7a',
-        'HOST': os.environ['DB_HOST'], #'ec2-54-166-251-173.compute-1.amazonaws.com'
-    }
-} """
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
