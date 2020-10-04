@@ -1,0 +1,21 @@
+{% extends "students/base.html" %}
+
+
+
+
+{% block content %}
+	<h4>Manage students and their transactions.</h4>
+	<p>Please select an option to continue	</p>
+
+<div class="row">
+			<a class="btn btn-primary" style="margin:10px;" href="{% url 'students:view_students' %}">Students and Transactions</a>
+</div>
+<div class="row">
+	<a class="btn btn-primary" style="margin:10px;" href="{% url 'students:students_form' %}">Add Student</a>
+	<a class="btn btn-primary" style="margin:10px;" href="{% url 'students:transactions_form' %}">Add Transaction</a>
+</div>
+<div class="row">			
+			<a class="btn btn-primary" style="margin:10px;" href="#">Student Reports</a>
+</div>
+
+{% endblock content %}

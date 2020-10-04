@@ -1,0 +1,55 @@
+{% extends "students/base.html" %}
+
+{% block content %}
+
+<p>Edit or Delete students</p>
+<table class="table">
+
+	<thead class="border-bottom font-weight-bold">
+	<tr>
+		<td>Name		</td>
+		<td>Email		</td>
+		<td>Phone		</td>
+		<td>Skypeid		</td>
+		<td>Location 	</td>
+		<td>Edit		</td>
+		<td>Delete		</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		{% for student in students_list %}
+		<tr>
+			<td>	{{ student.Name }}		</td>
+			<td>	{{ student.Email }}		</td>
+			<td>	{{ student.Phone }}		</td>
+			<td>	{{ student.Skypeid }}	</td>
+			<td>	{{ student.Location }}	</td>
+			<td> <a href="{% url 'students:edit_students' student.id %}" class="btn text-secondary px-0">
+					<i class="fa fa-edit">
+					</i>
+				</a>
+			</td>
+			<td><form action="{% url 'students:delete_students' student.id %}" method="POST" class="d-inline">{% csrf_token %}
+					<button type="Submit" class="btn">
+						<i class="fa fa-trash fa-lg text-danger float-right"></i>
+					</button>
+				</form>
+
+			</td>
+		</tr>
+
+		{% endfor %}
+	</tbody>
+
+</table>
+
+<div class='myButtons'>
+	<a class="btn btn-primary" role="button">View Transactions</a>
+	<a class = "btn btn-primary" href="{% url 'students:students_form' %}">Add Student</a>
+	<a class="btn btn-primary" href="{% url 'students:index' %}" role="button">Home</a>
+</div>
+
+
+
+{% endblock content %}

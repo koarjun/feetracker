@@ -1,0 +1,48 @@
+{% extends "students/base.html" %}
+
+{% block content %}
+
+<p>Edit or Delete students</p>
+<table class="table">
+
+	<thead class="border-bottom font-weight-bold">
+	<tr>
+		<td>Name		</td>
+		<td>Class Date		</td>
+		<td>Edit		</td>
+		<td>Delete		</td>
+	</tr>
+	</thead>
+
+	<tbody>
+		{% for transaction in transactions_list %}
+		<tr>
+			<td>	{{ student.Name }}			</td>
+			<td>	{{ student.Class_Date }}	</td>
+			
+			<td> <a href="{% url 'students:edit_transactions' transaction.id %}" class="btn text-secondary px-0">
+					<i class="fa fa-edit">
+					</i>
+				</a>
+			</td>
+			<td><form action="{% url 'students:delete_students' transaction.id %}" method="POST" class="d-inline">{% csrf_token %}
+					<button type="Submit" class="btn">
+						<i class="fa fa-trash fa-lg text-danger float-right"></i>
+					</button>
+				</form>
+
+			</td>
+		</tr>
+
+		{% endfor %}
+	</tbody>
+
+</table>
+
+<div class='myButtons'>
+	<a class="btn btn-primary" href="{% url 'students:index' %}" role="button">Home</a>
+</div>
+
+
+
+{% endblock content %}

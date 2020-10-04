@@ -1,0 +1,24 @@
+{% extends "students/base.html" %}
+
+
+{% block content %}
+
+
+	<h4> Select a student </h4><br>
+
+		<form method="post" action="" autocomplete="off">{% csrf_token %}
+			<select name="selected_student">
+				{% for student in students_list %}
+					<option value="{{ student.id }}"> {{ student.Name }}	</option>
+				{% endfor %}
+			</select>
+	
+	<br><br><button tupe="Submit" class="btn btn-success" href="{% url 'students:view_student_details'%}">View/Edit Student Details </button><br>
+	
+	</form>
+	
+	
+		<br><button type="Submit" class="btn btn-success">View Student Transactions</button><br><br><br>
+		<br><a class="btn btn-primary btn-lg" href="{% url 'students:index' %}" role="button">Home</a>
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<p class="lead"> Please fill in the details </p>
+
+<form action="" method="post" autocomplete="off">{% csrf_token %}
+	
+
+	
+
+	<div class="row">
+		<div class="col-md-4"> {{ student_form.Name|as_crispy_field}}	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-4"> {{ student_form.Skypeid|as_crispy_field}}	</div>
+		<div class="col-md-4"> {{ student_form.Location|as_crispy_field}}	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4"> {{ student_form.Email|as_crispy_field}} 	</div>
+		<div class="col-md-4"> {{ student_form.Phone|as_crispy_field}}	</div>
+		
+	</div>
+	
+
+
+	<button type="Submit" class='btn btn-success'> Submit </button>
+</form>	
+
+<br><a class="btn btn-primary btn-lg" href="{% url 'students:index' %}" role="button">Home</a>
+	<a class="btn btn-primary btn-lg" href="{% url 'students:view_students' %}" role="button">View Students</a>
+
+{% endblock content %}

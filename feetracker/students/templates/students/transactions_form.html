@@ -1,0 +1,24 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ transaction_form.media }}
+
+
+
+{% block content %}
+<p class="lead"> Please fill in the class details </p>
+
+<form action="" method="post" autocomplete="off">{% csrf_token %}
+
+	<div class="col-md-4"> {{ transaction_form.Name|as_crispy_field}}	</div>
+	<div class="col-md-2"> {{ transaction_form.Class_Date }}	</div>
+
+	<button type="Submit" class='btn btn-success'> Submit </button>
+</form>
+
+<br><a class="btn btn-primary btn-lg" href="{% url 'students:index' %}" role="button">Home</a>
+	<a class="btn btn-primary btn-lg" href="{% url 'students:view_students' %}" role="button">View Students</a>
+
+{% endblock content %}
