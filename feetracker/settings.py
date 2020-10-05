@@ -92,18 +92,6 @@ DATABASES = {
     }
 }
 
-""" DATABASES = {
-    "default": {
-        "ENGINE" : "django.db.backends.postgresql_psycopg2",
-        "NAME": "dehs70tso3d5hu",
-        "USER": "qbriwdnfeirvsd",
-        "PASSWORD": "eee3c1180c560d030cd00c77dfc7748cf664015d9608be3f64bcc3ea68adda5a",
-        "HOST": "ec2-3-210-255-177.compute-1.amazonaws.com",
-        "PORT": "5432",
-    }
-} """
-
-
 
 # DB Connection from heroku env.
 db_from_env = dj_database_url.config(conn_max_age=600)
