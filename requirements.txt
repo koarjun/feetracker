@@ -1,6 +1,7 @@
 django
 gunicorn
 django-heroku
+dj-database-url
 django-crispy-forms
 django-bootstrap4
 django-bootstrap-datepicker-plus
